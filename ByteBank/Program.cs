@@ -16,16 +16,21 @@ namespace ByteBank
             {
                 TestaDivisao(0);
             }
-            catch(NullReferenceException erro)
+            //catch(NullReferenceException erro)
+            //{
+            //    Console.WriteLine(erro.Message);
+            //    Console.WriteLine(erro.StackTrace);
+            //}
+            //catch (DivideByZeroException erro)
+            //{
+            //    Console.WriteLine(erro.Message);
+            //    Console.WriteLine(erro.StackTrace);
+            //    Console.WriteLine("Não é possivel dividir por 0!");
+            //}
+            catch(Exception erro)
             {
                 Console.WriteLine(erro.Message);
                 Console.WriteLine(erro.StackTrace);
-            }
-            catch (DivideByZeroException erro)
-            {
-                Console.WriteLine(erro.Message);
-                Console.WriteLine(erro.StackTrace);
-                Console.WriteLine("Não é possivel dividir por 0!");
             }
 
             Console.ReadLine();
