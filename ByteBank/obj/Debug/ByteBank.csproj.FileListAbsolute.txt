@@ -1,0 +1,7 @@
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\ByteBank\bin\Debug\ByteBank.exe.config
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\ByteBank\bin\Debug\ByteBank.exe
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\ByteBank\bin\Debug\ByteBank.pdb
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\ByteBank\obj\Debug\ByteBank.csprojAssemblyReference.cache
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\ByteBank\obj\Debug\ByteBank.csproj.CoreCompileInputs.cache
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\ByteBank\obj\Debug\ByteBank.exe
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\ByteBank\obj\Debug\ByteBank.pdb
