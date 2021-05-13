@@ -10,24 +10,19 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            //ContaCorrente conta = new ContaCorrente(7480, 874150);
-            //Console.WriteLine(ContaCorrente.TaxaOperacao);
+            
+            Console.WriteLine(ContaCorrente.TaxaOperacao);
             try
             {
-                TestaDivisao(0);
+                ContaCorrente conta = new ContaCorrente(0, 0);
             }
-            //catch(NullReferenceException erro)
-            //{
-            //    Console.WriteLine(erro.Message);
-            //    Console.WriteLine(erro.StackTrace);
-            //}
-            //catch (DivideByZeroException erro)
-            //{
-            //    Console.WriteLine(erro.Message);
-            //    Console.WriteLine(erro.StackTrace);
-            //    Console.WriteLine("Não é possivel dividir por 0!");
-            //}
-            catch(Exception erro)
+            catch (ArgumentException erro)
+            {
+                //Console.WriteLine("Problema no parametro: " + erro.ParamName);
+                Console.WriteLine(erro.Message);
+                Console.WriteLine(erro.StackTrace);
+            }
+            catch (Exception erro)
             {
                 Console.WriteLine(erro.Message);
                 Console.WriteLine(erro.StackTrace);
