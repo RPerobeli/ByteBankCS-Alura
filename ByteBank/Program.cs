@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,45 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            
-            Console.WriteLine(ContaCorrente.TaxaOperacao);
+           
+            CarregarContas();
+
+            Console.ReadLine();
+        }
+        private static void CarregarContas()
+        {
+
+            //using (LeitorDeArquivo leitor = new LeitorDeArquivo("contas.txt"))
+            //{
+            //    leitor.LerProximaLinha();
+            //    leitor.LerProximaLinha();
+            //    leitor.LerProximaLinha();
+            //}
+            //--------------------------------------------------------------
+            LeitorDeArquivo leitor = null;
+            try
+            {
+                leitor = new LeitorDeArquivo("contas.txt");
+                leitor.LerProximaLinha();
+                leitor.LerProximaLinha();
+                leitor.LerProximaLinha();
+            }
+            catch (IOException)
+            {
+                Console.WriteLine("Exceção do tipo IOException capturada e tratada.");
+            }
+            finally
+            {
+                if (leitor != null)
+                {
+                    leitor.Fechar();
+                }
+            }
+
+
+        }
+        private static void TestarinnerException()
+        {
             try
             {
                 ContaCorrente conta = new ContaCorrente(274, 12345);
@@ -24,7 +62,7 @@ namespace ByteBank
                 Console.WriteLine(erro.Message);
                 Console.WriteLine(erro.StackTrace);
             }
-            catch(OperacaoFinanceiraException e)
+            catch (OperacaoFinanceiraException e)
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.StackTrace);
@@ -39,8 +77,6 @@ namespace ByteBank
                 Console.WriteLine(erro.Message);
                 Console.WriteLine(erro.StackTrace);
             }
-
-            Console.ReadLine();
         }
 
         private static void TestaDivisao(int divisor)
