@@ -12,7 +12,7 @@ namespace ByteBank
         public double Valor {get;}
         public SaldoInsuficienteException() { }
         public SaldoInsuficienteException(string mensagem) : base(mensagem) { }
-        public SaldoInsuficienteException(double saldo, double valor) : this("Tentativa de saque de " + valor + " com saldo de " + saldo)
+        public SaldoInsuficienteException(double saldo, double valor) : this("Tentativa de retirada de " + valor + " com saldo de " + saldo)
         {
             Saldo = saldo;
             Valor = valor;

@@ -53,15 +53,8 @@ namespace ByteBank
 
         public void Sacar(double valor)
         {
-            if(valor<0)
-            {
-                throw new ArgumentException("valor de saque não pode ser negativo", nameof(valor));
-            }
-            if (_saldo < valor)
-            {
-                throw new SaldoInsuficienteException(_saldo, valor);
-            }
-
+            VerificarSaqueNegativo(valor);
+            VerificarSaldo(_saldo, valor);
             _saldo -= valor;
         }
 
@@ -73,17 +66,26 @@ namespace ByteBank
 
         public void Transferir(double valor, ContaCorrente contaDestino)
         {
-            if (valor < 0)
-            {
-                throw new ArgumentException("valor de saque não pode ser negativo", nameof(valor));
-            }
-            if (_saldo < valor)
-            {
-                throw new SaldoInsuficienteException(_saldo, valor);
-            }
+            VerificarSaqueNegativo(valor);
+            VerificarSaldo(_saldo, valor);
 
             Sacar(valor);
             contaDestino.Depositar(valor);
+        }
+
+        private void VerificarSaldo(double saldo, double valor)
+        {
+            if (saldo < valor)
+            {
+                throw new SaldoInsuficienteException(saldo, valor);
+            }
+        }
+        private void VerificarSaqueNegativo(double valor)
+        {
+            if (valor < 0)
+            {
+                throw new ArgumentException("valor desejado não pode ser negativo", nameof(valor));
+            }
         }
     }
 }

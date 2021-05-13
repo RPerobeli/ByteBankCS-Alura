@@ -14,7 +14,7 @@ namespace ByteBank
             Console.WriteLine(ContaCorrente.TaxaOperacao);
             try
             {
-                ContaCorrente conta = new ContaCorrente(0, 0);
+                ContaCorrente conta = new ContaCorrente(274, 12345);
             }
             catch (ArgumentException erro)
             {
