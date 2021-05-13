@@ -13,6 +13,9 @@ namespace ByteBank
         public int Agencia { get; } //somente get, o compilador entende que a propriedade é somente leitura, e cria uma variável readonly por debaixo dos panos.
         public int Numero { get;}
 
+        public int ContadorSaquesNaoPermitidos { get; private set; }
+        public int ContadorTransferenciasNaoPermitidos { get; private set; }
+
         private double _saldo = 100;
 
         public double Saldo
@@ -66,10 +69,14 @@ namespace ByteBank
 
         public void Transferir(double valor, ContaCorrente contaDestino)
         {
-            VerificarSaqueNegativo(valor);
-            VerificarSaldo(_saldo, valor);
-
-            Sacar(valor);
+            try
+            {
+                Sacar(valor);
+            }catch(SaldoInsuficienteException ex)
+            {
+                ContadorTransferenciasNaoPermitidos++;
+                throw new OperacaoFinanceiraException("Operacao nao realizada.", ex);
+            }
             contaDestino.Depositar(valor);
         }
 
@@ -77,6 +84,7 @@ namespace ByteBank
         {
             if (saldo < valor)
             {
+                ContadorSaquesNaoPermitidos++;
                 throw new SaldoInsuficienteException(saldo, valor);
             }
         }
@@ -84,6 +92,7 @@ namespace ByteBank
         {
             if (valor < 0)
             {
+                ContadorSaquesNaoPermitidos++;
                 throw new ArgumentException("valor desejado não pode ser negativo", nameof(valor));
             }
         }

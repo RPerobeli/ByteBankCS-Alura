@@ -15,12 +15,24 @@ namespace ByteBank
             try
             {
                 ContaCorrente conta = new ContaCorrente(274, 12345);
+                ContaCorrente conta2 = new ContaCorrente(2345, 128984);
+
+                conta.Transferir(10000, conta2);
             }
             catch (ArgumentException erro)
             {
-                //Console.WriteLine("Problema no parametro: " + erro.ParamName);
                 Console.WriteLine(erro.Message);
                 Console.WriteLine(erro.StackTrace);
+            }
+            catch(OperacaoFinanceiraException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+
+                Console.WriteLine("Informações da INNER EXCEPTION (exceção interna):");
+
+                Console.WriteLine(e.InnerException.Message);
+                Console.WriteLine(e.InnerException.StackTrace);
             }
             catch (Exception erro)
             {
