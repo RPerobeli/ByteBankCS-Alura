@@ -1,0 +1,15 @@
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\bin\Debug\netcoreapp3.1\ByteBank.SistemaInterno.exe
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\bin\Debug\netcoreapp3.1\ByteBank.SistemaInterno.deps.json
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\bin\Debug\netcoreapp3.1\ByteBank.SistemaInterno.runtimeconfig.json
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\bin\Debug\netcoreapp3.1\ByteBank.SistemaInterno.runtimeconfig.dev.json
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\bin\Debug\netcoreapp3.1\ByteBank.SistemaInterno.dll
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\bin\Debug\netcoreapp3.1\ByteBank.SistemaInterno.pdb
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\bin\Debug\netcoreapp3.1\ByteBank.Modelos.dll
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\obj\Debug\netcoreapp3.1\ByteBank.SistemaInterno.csprojAssemblyReference.cache
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\obj\Debug\netcoreapp3.1\ByteBank.SistemaInterno.AssemblyInfoInputs.cache
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\obj\Debug\netcoreapp3.1\ByteBank.SistemaInterno.AssemblyInfo.cs
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\obj\Debug\netcoreapp3.1\ByteBank.SistemaInterno.csproj.CoreCompileInputs.cache
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\obj\Debug\netcoreapp3.1\ByteBank.SistemaInterno.csproj.CopyComplete
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\obj\Debug\netcoreapp3.1\ByteBank.SistemaInterno.dll
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\obj\Debug\netcoreapp3.1\ByteBank.SistemaInterno.pdb
+G:\Meu Drive\DESENVOLVEDOR\Alura\csharpexceptions-projetoInicial\Parte 6\ByteBank.SistemaInterno\obj\Debug\netcoreapp3.1\ByteBank.SistemaInterno.genruntimeconfig.cache
