@@ -19,32 +19,31 @@ namespace ByteBank
         private static void CarregarContas()
         {
 
-            //using (LeitorDeArquivo leitor = new LeitorDeArquivo("contas.txt"))
-            //{
-            //    leitor.LerProximaLinha();
-            //    leitor.LerProximaLinha();
-            //    leitor.LerProximaLinha();
-            //}
+            using (LeitorDeArquivo leitor = new LeitorDeArquivo("contas.txt"))
+            {
+                leitor.LerProximaLinha();
+                leitor.LerProximaLinha();
+                leitor.LerProximaLinha();
+            }
             //--------------------------------------------------------------
-            LeitorDeArquivo leitor = null;
-            try
-            {
-                leitor = new LeitorDeArquivo("contas.txt");
-                leitor.LerProximaLinha();
-                leitor.LerProximaLinha();
-                leitor.LerProximaLinha();
-            }
-            catch (IOException)
-            {
-                Console.WriteLine("Exceção do tipo IOException capturada e tratada.");
-            }
-            finally
-            {
-                if (leitor != null)
-                {
-                    leitor.Fechar();
-                }
-            }
+            //O using é um açúcar sintático para essa sequencia de comandos try catch finallys
+            //LeitorDeArquivo leitor = null;
+            //try
+            //{
+            //    leitor = new LeitorDeArquivo("contas.txt");
+            //    leitor.LerProximaLinha();
+            //    leitor.LerProximaLinha();
+            //    leitor.LerProximaLinha();
+            //}catch(IOException)
+            //{
+            //    Console.WriteLine("Exceção do tipo IOException capturada e tratada.");
+            //}finally
+            //{
+            //    if(leitor!=null)
+            //    {
+            //        leitor.Fechar();
+            //    }
+            //}
 
 
         }
