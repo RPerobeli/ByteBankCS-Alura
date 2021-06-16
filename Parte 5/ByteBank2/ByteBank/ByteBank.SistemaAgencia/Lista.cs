@@ -1,5 +1,4 @@
-﻿using ByteBank.Modelos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace ByteBank.SistemaAgencia
 {
-    public class ListaContaCorrente
+    public class Lista<T>
     {
-        private ContaCorrente[] _items;
+        private T[] _items;
         private int _proxPosicao;
-        public ListaContaCorrente(int capacidadeInicial = 5)
+        public Lista(int capacidadeInicial = 5)
         {
-            _items = new ContaCorrente[capacidadeInicial];
+            _items = new T[capacidadeInicial];
             _proxPosicao = 0;
 
         }
 
-        public void Adicionar(ContaCorrente item)
+        public void Adicionar(T item)
         {
-            VerificarCapacidade(_proxPosicao+1);
-            Console.WriteLine($"Adicionando no índice {_proxPosicao} conta {item.Agencia}/{item.Numero}");
+            VerificarCapacidade(_proxPosicao + 1);
+            //Console.WriteLine($"Adicionando no índice {_proxPosicao} conta {item.Agencia}/{item.Numero}");
             _items[_proxPosicao] = item;
             _proxPosicao++;
 
@@ -38,43 +37,43 @@ namespace ByteBank.SistemaAgencia
             {
                 novoTamanho = novaCapacidade;
             }
-            ContaCorrente[] novoArray = new ContaCorrente[novoTamanho];
-            for(int i =0;i<_items.Length;i++)
+            T[] novoArray = new T[novoTamanho];
+            for (int i = 0; i < _items.Length; i++)
             {
                 novoArray[i] = _items[i];
             }
             _items = novoArray;
         }
-        public void Remover(ContaCorrente item)
+        public void Remover(T item)
         {
             int indiceItem = -1;
 
-            for(int i = 0; i<_proxPosicao;i++)
+            for (int i = 0; i < _proxPosicao; i++)
             {
-                if(_items[i].Equals(item))
+                if (_items[i].Equals(item))
                 {
                     indiceItem = i;
                     break;
-                } 
+                }
             }
             for (int i = indiceItem; i < _proxPosicao - 1; i++)
             {
                 _items[i] = _items[i + 1];
             }
             _proxPosicao--;
-            _items[_proxPosicao] = null;
+            //_items[_proxPosicao] = null;
         }
         public void EscreverListaNaTela()
         {
             for (int i = 0; i < _proxPosicao; i++)
             {
-                ContaCorrente conta = _items[i];
-                Console.WriteLine($"Conta no índice {i}: numero {conta.Agencia} {conta.Numero}");
+                T item = _items[i];
+                Console.WriteLine(item);
             }
         }
-        public ContaCorrente GetItemNoIndice(int indice)
+        public T GetItemNoIndice(int indice)
         {
-            if(indice < 0 || indice > _proxPosicao)
+            if (indice < 0 || indice > _proxPosicao)
             {
                 throw new ArgumentOutOfRangeException(nameof(indice));
             }
@@ -82,13 +81,13 @@ namespace ByteBank.SistemaAgencia
         }
 
         public int Tamanho
-        { 
+        {
             get
             {
                 return _proxPosicao;
             }
         }
-        public ContaCorrente this[int indice]
+        public T this[int indice]
         {
             get
             {
@@ -96,9 +95,9 @@ namespace ByteBank.SistemaAgencia
             }
         }
 
-        public void AdicionarVarios(params ContaCorrente[] contas)
+        public void AdicionarVarios(params T[] contas)
         {
-            foreach(ContaCorrente c in contas)
+            foreach (T c in contas)
             {
                 Adicionar(c);
             }

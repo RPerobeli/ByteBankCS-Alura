@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ByteBank.Modelos;
+using ByteBank.SistemaAgencia.Extensoes;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -12,10 +13,28 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            Arrays();
+            ListLambdaLinq();
             Console.ReadLine();
         }
+        static void ListLambdaLinq()
+        {
+            List<int> idades = new List<int>();
 
+            idades.Add(1);
+            idades.Add(5);
+            idades.Add(14);
+            idades.Add(25);
+            idades.Add(38);
+            idades.Add(61);
+
+            //ListExtensoes.AdicionarVarios(idades, 444,555,654,789);
+            idades.AdicionarVarios(444, 555, 777);
+
+            for (int i = 0; i < idades.Count; i++)
+            {
+                Console.WriteLine(idades[i]);
+            }
+        }
         static void ContaCorrente()
         {
             ContaCorrente conta = new ContaCorrente(345, 12345);
