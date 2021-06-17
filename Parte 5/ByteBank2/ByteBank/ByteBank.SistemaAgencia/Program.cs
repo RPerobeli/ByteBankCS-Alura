@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ByteBank.Modelos;
+using ByteBank.SistemaAgencia.Comparadores;
 using ByteBank.SistemaAgencia.Extensoes;
 
 namespace ByteBank.SistemaAgencia
@@ -13,8 +14,58 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            ListLambdaLinq();
+            TestesSort();
             Console.ReadLine();
+        }
+        static void TestesSort()
+        {
+            var nomes = new List<string>()
+            {
+                "Vinícius",
+                "Gisele",
+                "Mayra",
+                "Vasco"
+            };
+
+            nomes.Sort();
+            foreach (var nome in nomes)
+            {
+                Console.WriteLine(nome);
+            }
+            var contas = new List<ContaCorrente>()
+            {
+                new ContaCorrente(341, 57480),
+                null,
+                new ContaCorrente(342, 45678),
+                new ContaCorrente(340, 48950),
+                new ContaCorrente(290, 18950),
+                new ContaCorrente(300, 99999),
+                new ContaCorrente(200, 1),
+                null
+            };
+
+            //contas.Sort(); //Compara usando o numero, interface IComparable
+            //contas.Sort(new ComparadorContaCorrenteAgencia()); //Compara usando o comparador específico para agencia
+
+            IEnumerable<ContaCorrente> contasNaoNulas = contas.Where(c => c != null);
+
+            //var contasOrdenadas = contas.OrderBy(conta =>
+            //{
+            //    if(conta == null)
+            //    {
+            //        return int.MaxValue;
+            //    }
+            //    return conta.Numero;
+            //});
+            IOrderedEnumerable<ContaCorrente> contasOrdenadas = contas.Where(c => c != null).OrderBy(c => c.Numero);
+
+            foreach (var conta in contasOrdenadas)
+            {
+                if(conta !=null)
+                {
+                    Console.WriteLine($"Conta número {conta.Numero}, ag. {conta.Agencia}");
+                }
+            }
         }
         static void ListLambdaLinq()
         {
